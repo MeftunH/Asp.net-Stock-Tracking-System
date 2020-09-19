@@ -1,6 +1,6 @@
 # Asp.net-Stock-Tracking-System
-Asp.net Project with MVC architecture
-Here has some images from website
+Asp.net Project with MVC architecture.
+Here has some images from website.
 ![Screenshot_3](https://user-images.githubusercontent.com/48466124/93664748-3d569b80-fa82-11ea-82d8-414f6f6bc694.png)
 
 ![Screenshot_5](https://user-images.githubusercontent.com/48466124/93664767-6a0ab300-fa82-11ea-80fb-94352d3bfe80.png)
