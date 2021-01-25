@@ -1,0 +1,26 @@
+﻿@model MCVSTOK.Models.ModelEntity.TBL_MUSTERILER
+@{
+    ViewBag.Title = "NewCustomer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <form method="post" class="form-group">
+        <div>
+            <label>Customer's Name</label>
+            @Html.TextBoxFor(m => m.MUSTERIAD, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.MUSTERIAD, "", new { @style = "color:red" })
+        </div>
+        <div>
+            <label>Customer's Surname</label>
+            <input type="text" class="form-control" name="MUSTERISOYAD" />
+        </div>
+        <div>
+            <button class="btn btn-info" id="btn1">ADD NEW CUSTOMER</button>
+        </div>
+        <script>
+            $('#btn1').click(function () {
+                alert('Successiful operation')
+            });
+        </script>
+    </form>
+

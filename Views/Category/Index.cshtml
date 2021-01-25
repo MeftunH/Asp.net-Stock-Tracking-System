@@ -1,0 +1,31 @@
+﻿@using MCVSTOK.Models.ModelEntity
+@using PagedList
+@using PagedList.Mvc
+
+@model  PagedList.IPagedList<TBL_KATEGORILER>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<table class="table table-bordered">
+    <tr>
+        <th>Category ID</th>
+        <th>Category Name</th>
+        <th>DELETE</th>
+        <th>UPDATE</th>
+    </tr>
+    <tbody>
+        @foreach(var ctgry in Model)
+        {
+            <tr>
+                <td>@ctgry.KATEGORIID</td>
+                <td>@ctgry.KATEGORIAD</td>
+                <td><a href="/CATEGORY/DELETE/@ctgry.KATEGORIID" class="btn btn-danger">DELETE</a></td>
+                <td><a href="/CATEGORY/BringCategory/@ctgry.KATEGORIID" class="btn btn-success">UPDATE</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+@Html.PagedListPager((IPagedList)Model,page=>Url.Action("Index",new { page}))
+<a href="/CATEGORY/NewCategory/" class="btn btn-primary">ADD NEW CATEGORY</a>
+

@@ -1,0 +1,36 @@
+﻿@model MCVSTOK.Models.ModelEntity.TBL_URUNLER
+@{
+    ViewBag.Title = "NewProduct";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    <form method="post" class="form-group">
+        <div>
+            <label>Product's Name</label>
+            <input type="text" class="form-control" name="URUNADI" required="" />
+        </div>
+        <div>
+            <label>Product's Category</label>
+        </div>
+        <div>
+            <label>Choose Category</label>
+            @Html.DropDownListFor(m => m.TBL_KATEGORILER.KATEGORIID, (List<SelectListItem>)ViewBag.value, new { @class = "form-control"})
+        </div> 
+        <div>
+            <label>Product's Price</label>
+            <input type="text" class="form-control" name="FIYAT" />
+        </div>
+        <div>
+            <label>Product's Brand</label>
+            <input type="text" class="form-control" name="MARKA" required="" />
+            <div>
+                <label>Product's Stock Number</label>
+                <input type="text" class="form-control" name="STOK" />
+
+            </div>
+        </div>
+        <div>
+            <button class="btn btn-info">ADD NEW PRODUCT</button>
+        </div>
+    </form>
+
+

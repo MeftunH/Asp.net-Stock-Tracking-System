@@ -1,0 +1,20 @@
+﻿@model MCVSTOK.Models.ModelEntity.TBL_KATEGORILER
+@{
+    ViewBag.Title = "BringCategory";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm("UPDATE", "Category", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.KATEGORIID)
+        @Html.TextBoxFor(m => m.KATEGORIID, new { @class = "form-control" })
+
+        <br />
+        @Html.LabelFor(m => m.KATEGORIAD)
+        @Html.TextBoxFor(m => m.KATEGORIAD, new { @class = "form-control" })
+    </div>
+    <div>
+        <button class="btn btn-warning">UPDATE CATEGORY</button>
+    </div>
+}
+

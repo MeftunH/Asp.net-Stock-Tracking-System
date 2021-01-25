@@ -1,0 +1,42 @@
+﻿@using MCVSTOK.Models.ModelEntity
+@model List<TBL_MUSTERILER>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Index","Customer",FormMethod.Get))
+{
+    <p>
+        Search For Name: @Html.TextBox("p")
+        <input type="submit" value="Search" />
+    </p>
+}
+
+
+<table class="table table-bordered">
+    <tr>
+        <th>CUSTOMER ID</th>
+        <th>CUSTOMER NAME</th>
+        <th>CUSTOMER SURNAME</th>
+        <th>DELETE</th>
+        <th>UPDATE</th>
+        <th>Alert</th>
+    </tr>
+    <tbody>
+        @foreach (var cstmr in Model)
+        {
+            <tr>
+                <td>@cstmr.MUSTERIID</td>
+                <td>@cstmr.MUSTERIAD</td>
+                <td>@cstmr.MUSTERISOYAD</td>
+                <td><a href="/CUSTOMER/DELETE/@cstmr.MUSTERIID" class="btn btn-danger">DELETE</a></td>
+                <td><a href="/CUSTOMER/BringCustomer/@cstmr.MUSTERIID" class="btn btn-success">UPDATE</a></td>
+                <td>@Html.ActionLink("DELETE WITH ALERT", "DELETE", new { id = cstmr.MUSTERIID }, new { @class = "btn btn-warning", onclick = "return confirm('Confirm')" })</td>
+            </tr>
+            }
+    </tbody>
+</table>
+<a href="/CUSTOMER/NEWCUSTOMER/" class="btn btn-primary">ADD NEW CUSTOMER</a>
+
+

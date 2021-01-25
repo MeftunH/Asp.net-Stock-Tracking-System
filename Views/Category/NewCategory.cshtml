@@ -1,0 +1,20 @@
+﻿@model MCVSTOK.Models.ModelEntity.TBL_KATEGORILER
+@{
+    ViewBag.Title = "NewCategory";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div>
+        <label>Category's Name</label>
+        <br />
+        @Html.TextBoxFor(m => m.KATEGORIAD, new { @class = "form=control" })
+        @Html.ValidationMessageFor(m => m.KATEGORIAD, "", new { @style = "color:red" })
+    </div>
+
+        <div style="margin-top:15px">
+        <button class="btn btn-info">ADD CATEGORY</button>
+        </div>
+
+</form>
+

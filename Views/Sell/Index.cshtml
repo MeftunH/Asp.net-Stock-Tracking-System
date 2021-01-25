@@ -1,0 +1,45 @@
+﻿@model MCVSTOK.Models.ModelEntity.TBL_SATISLAR
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modal1">
+    sell
+</button>
+<div class="modal" id="Modal1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Selling screen</h2>
+            </div>
+            <form method="post" action="/Sell/NewSell">
+                <div class="modal-body"></div>
+                <label>
+                    Product Name
+                </label>
+                @Html.TextBoxFor(m => m.URUN, new { @class = "form-control" })
+                <br />
+                <label>
+                    Customer Name Surname
+                </label>
+                @Html.TextBoxFor(m => m.MUSTERI, new { @class = "form-control" })
+                <br />
+                <label>
+                    Number
+                </label>
+                @Html.TextBoxFor(m => m.ADET, new { @class = "form-control" })
+                <br />
+                <label>
+                    Price
+                </label>
+                @Html.TextBoxFor(m => m.FIYAT, new { @class = "form-control" })
+                <button type="submit" class="btn btn-info">Save Sell</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                <label>
+                    Toplam
+
+                </label>
+            </form>
+        </div>
+    </div>
+</div>
